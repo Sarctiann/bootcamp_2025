@@ -16,7 +16,7 @@ class DatabaseManager:
         self.db = os.getenv("POSTGRES_DB", "bootcamp")
 
         self.connection_string = (
-            f"postgresql+asyncpg://{self.user}:{self.password}"
+            f"postgresql+driver://{self.user}:{self.password}"
             f"@{self.host}:{self.port}/{self.db}"
         )
 
@@ -25,13 +25,23 @@ class DatabaseManager:
 
     async def initialize(self):
         """Initialize the engine and sessionmaker"""
+        final_connection_string = self.connection_string.replace("driver", "asyncpg")
         self.engine = create_async_engine(
-            self.connection_string,
+            final_connection_string,
             echo=True,
             future=True,
         )
 
         self.async_session = async_sessionmaker(self.engine)
+
+    def initialize_sync(self):
+        """Initialize the engine and sessionmaker for sync operations"""
+        final_connection_string = self.connection_string.replace("driver", "psycopg")
+        self.engine = create_async_engine(
+            final_connection_string,
+            echo=True,
+            future=True,
+        )
 
     async def get_all_sales(self) -> pd.DataFrame:
         """Get all records from the sales table"""
@@ -55,6 +65,21 @@ class DatabaseManager:
                     print(f"Error while trying to get data from `sales`: {e}")
                     raise
         return pd.DataFrame()
+
+    def get_all_sales_with_pandas(self) -> pd.DataFrame:
+        """Get all records from the sales table using pandas"""
+        if not self.engine:
+            self.initialize_sync()
+        if not self.engine:
+            raise Exception("Database engine is not initialized")
+
+        try:
+            with self.engine.sync_engine.connect() as conn:
+                df = pd.read_sql("SELECT * FROM sales", conn)
+                return df
+        except Exception as e:
+            print(f"Error while trying to get data from `sales` with pandas: {e}")
+            raise
 
     async def close(self):
         """Close connections"""

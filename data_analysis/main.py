@@ -8,7 +8,7 @@ async def main():
     try:
         print("Connecting to the database...")
 
-        sales_df = await db.get_all_sales()
+        sales_df = db.get_all_sales_with_pandas()
 
         print(f"\n✅ Found {len(sales_df)} records in the 'sales' table")
         print("\n📊 DataFrame Information:")
