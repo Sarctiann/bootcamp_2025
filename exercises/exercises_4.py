@@ -25,7 +25,7 @@ class Empty:
 class SimplePoint:
     """
     Esta clase representa un punto en el plano cartesiano. Se comporta como una
-    simple structura de datos, con dos atributos x e y.
+    simple estructura de datos, con dos atributos x e y.
     """
 
     x = 0
@@ -69,7 +69,7 @@ p2.change(1, 2)
 
 print(p2.y)  # -> 2
 
-# Atributos de clace vs atributos de instancia
+# Atributos de clase vs atributos de instancia
 
 p3 = SimplePointYet()
 p3.change(1, 2)
@@ -164,7 +164,7 @@ class Point:
 
     @y.setter
     def y(self, _):
-        # Podemos decidir por ejemplo que el aributo x sea inmutable
+        # Podemos decidir por ejemplo que el atributo x sea inmutable
         raise AttributeError("El atributo `y` es inmutable")
 
 
@@ -195,7 +195,7 @@ Consignas:
 1. Crear una clase Persona que tenga los atributos first_name, last_name, y age.
     - La clase debe tener un constructor que reciba estos tres atributos en ese orden.
     - La clase debe tener una propiedad `full_name`.
-    - La case debe tener un metodo `greet` que imprima un saludo: 
+    - La clase debe tener un método `greet` que imprima un saludo: 
         "Hola, mi nombre es {full_name} y tengo {age} años".
 
 2. Cree una función con el nombre `add_points` que sume dos objetos de tipo `Point`,
