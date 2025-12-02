@@ -3,8 +3,8 @@ from typing import Any
 
 def mas_ejercicios() -> Any:
     """
-    Esta función generadora funciona de la misma manera que la que resolvierion
-    en `exersises_1.py`.
+    Esta función generadora funciona de la misma manera que la que resolvieron
+    en `exercises_1.py`.
 
     Por cualquier duda revise su documentación.
 
@@ -13,9 +13,9 @@ def mas_ejercicios() -> Any:
     consignas.
 
     Tenga en cuenta que en contraste con los ejercicios de la clase anterior,
-    en vez de usar "variables", deberá trabajar con los parametros de las funciones.
+    en vez de usar "variables", deberá trabajar con los parámetros de las funciones.
 
-    Luego cuando corra los tests. estan funciones serán probadas con diferentes
+    Luego cuando corra los tests, estas funciones serán probadas con diferentes
     valores para verificar que funcionan correctamente.
     """
 
@@ -37,16 +37,16 @@ def mas_ejercicios() -> Any:
 
     """
         NOTA: Si pudo resolver el primer ejercicio cumpliendo con la consigna, 
-        habrá para el segundo ejercicio no es necesario útilizar `else`.
+        habrá para el segundo ejercicio no es necesario utilizar `else`.
 
-        Esto en realidad casi siempre es asi en el contexto de una función que 
+        Esto en realidad casi siempre es así en el contexto de una función que 
         retorna un valor, ya que la ejecución de la función termina con `return`.
         Por lo cual es considerado una "buena práctica" simplificar los condicionales
         siempre que sea posible.
 
         Si aún no resolvió el primer ejercicio, esta nota le puede resultar de ayuda.
 
-        De todas formas, estamos usando estructuras condicionales inecesariamente
+        De todas formas, estamos usando estructuras condicionales innecesariamente
         más complejas, para ponerlas en práctica.
     """
 
@@ -68,7 +68,7 @@ def mas_ejercicios() -> Any:
 
     # Ejercicio 5: Modifique esta función para que devuelva la sumatoria
     # números enteros menores a `valor`, pero si `solo_impares` es `True` solo
-    # sume los números impares. Debe usar un `while` y un `if`combinado con la
+    # sume los números impares. Debe usar un `while` y un `if` combinado con la
     # palabra clave `continue` para resolverlo. (CUIDADO CON LOS BUCLES INFINITOS).
     def e(valor: int, solo_impares: bool) -> int:
         return 0

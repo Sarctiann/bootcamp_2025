@@ -36,7 +36,7 @@ se.add(4)
 
 tu = (10, 2, 3)  # tuple
 
-# Tryin to change the first element unsuccessfully
+# Trying to change the first element unsuccessfully
 
 try:
     # You will get a TypeError here... don't worry we are handling it
@@ -106,7 +106,7 @@ shallow_copy = db1.copy()
 shallow_copy["prices"][0] = 150
 print("Precios modificados:", shallow_copy["prices"])
 
-# Trying to acces the original prices
+# Trying to access the original prices
 print("Precios originales ?:", db1["prices"])
 print("¿QUE PASÓ?, lista de precios original ?:", prices)
 
@@ -123,7 +123,7 @@ deep_copy = deepcopy(db1)
 deep_copy["prices"][0] = 150
 print("Precios modificados:", deep_copy["prices"])
 
-# Trying to acces the original prices
+# Trying to access the original prices
 print("Precios originales ?:", db1["prices"], "OK!")
 
 # -----------------------------------------------------------------------------
